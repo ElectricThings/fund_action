@@ -100,6 +100,7 @@ GEM
       safe_yaml (~> 1.0.0)
     css_parser (1.5.0)
       addressable
+    daemons (1.2.4)
     dalli (2.7.6)
     database_cleaner (1.6.1)
     date_validator (0.9.0)
@@ -589,6 +590,7 @@ PLATFORMS
 DEPENDENCIES
   byebug
   capistrano
+  daemons
   dalli
   decidim (= 0.4.4)
   decidim-dev (= 0.4.4)

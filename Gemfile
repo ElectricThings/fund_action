@@ -24,6 +24,7 @@ group :development do
 end
 
 group :production do
+  gem 'daemons'
   gem 'delayed_job_active_record'
   gem 'unicorn'
   gem 'dalli'
