@@ -26,6 +26,8 @@ end
 group :production do
   gem 'daemons'
   gem 'delayed_job_active_record'
+  gem 'syslog_logger', github: 'jkraemer/syslog_logger'
   gem 'unicorn'
   gem 'dalli'
+  gem 'airbrake'
 end
