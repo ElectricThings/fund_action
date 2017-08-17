@@ -19,7 +19,7 @@
 #   it_behaves_like "an authorization handler"
 #
 # See Decidim::AuthorizationHandler for more documentation.
-class ExampleAuthorizationHandler < Decidim::AuthorizationHandler
+class AnybodyAuthorizationHandler < Decidim::AuthorizationHandler
   # Define the attributes you need for this authorization handler. Attributes
   # are defined using Virtus.
   #
@@ -40,7 +40,7 @@ class ExampleAuthorizationHandler < Decidim::AuthorizationHandler
   # validations will not run, so it's easier to just remove this method and reite
   # your logic using ActiveModel validations.
   def valid?
-    raise NotImplementedError
+    true
   end
 
   # If you need to store any of the defined attributes in the authorization you
