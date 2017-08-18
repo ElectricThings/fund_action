@@ -6,6 +6,8 @@ gem "decidim", "0.4.4"
 
 gem 'uglifier', '>= 1.3.0'
 
+gem 'rack-attack'
+
 group :development, :test do
   gem 'byebug', platform: :mri
   gem "decidim-dev", "0.4.4"
