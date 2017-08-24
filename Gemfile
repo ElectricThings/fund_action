@@ -2,7 +2,7 @@ source "https://rubygems.org"
 
 ruby '2.4.1'
 
-gem "decidim", "0.4.4"
+gem "decidim", '0.5.1'
 
 gem 'uglifier', '>= 1.3.0'
 
@@ -10,7 +10,7 @@ gem 'rack-attack'
 
 group :development, :test do
   gem 'byebug', platform: :mri
-  gem "decidim-dev", "0.4.4"
+  gem "decidim-dev", "0.5.1"
   #gem 'faker', '~> 1.8.4'
 end
 
