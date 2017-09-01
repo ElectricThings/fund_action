@@ -14,7 +14,7 @@ set :deploy_to, "/srv/webapps/fund_action"
 set :pty, true
 
 append :linked_files, "config/database.yml", "config/secrets.yml"
-append :linked_dirs, "log", "tmp", "vendor/bundle", "files"
+append :linked_dirs, "log", "tmp", "vendor/bundle", "files", 'public/uploads'
 
 # Default value for default_env is {}
 # set :default_env, { path: "/opt/ruby/bin:$PATH" }
