@@ -18,8 +18,6 @@ group :development do
   gem 'puma', '~> 3.0'
   gem 'web-console'
   gem 'listen', '~> 3.1.0'
-  gem 'spring'
-  gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'letter_opener_web', '~> 1.3.0'
 
   gem 'capistrano'
