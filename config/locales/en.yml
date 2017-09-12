@@ -31,3 +31,20 @@
 
 en:
   hello: "Hello world"
+  activemodel:
+    attributes:
+      user:
+        country: Country
+        languages: Languages
+
+  decidim:
+    account:
+      account_form_additional_attributes:
+        choose_country: Select the country you live in...
+        choose_languages: Select the languages you speak...
+
+    user_profiles:
+      user_profile_bottom:
+        country: I'm from %{country}.
+        i_speak: I speak %{languages}.
+

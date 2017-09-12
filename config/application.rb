@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require_relative 'boot'
 
 require 'rails/all'
@@ -14,5 +16,20 @@ module FundAction
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
+
+    config.to_prepare do
+      #Dir[Rails.root/'app/patches/**/*.rb'].each do |file|
+      #  require_dependency file
+      #end
+
+      AccountFormPatch.apply
+      UpdateAccountPatch.apply
+      UserProfilePresenterPatch.apply
+    end
+
+
+
   end
 end
+
+

@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
 # frozen_string_literal: true
 
+require 'fund_action/abilities'
+
 Decidim.configure do |config|
   config.application_name = "FundAction's Assembly"
   config.mailer_sender = "assembly@fundaction.eu"
@@ -24,10 +26,12 @@ Decidim.configure do |config|
   # end
 
   # Currency unit
-  # config.currency_unit = "€"
+  config.currency_unit = "€"
 
   # The number of reports which an object can receive before hiding it
   # config.max_reports_before_hiding = 3
+
+  config.abilities << 'FundAction::Abilities'
 end
 
 Rails.application.config.i18n.available_locales = Decidim.available_locales

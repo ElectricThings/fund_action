@@ -11,6 +11,8 @@ class ApplicationController < ActionController::Base
       params[:id] == 'terms-and-conditions'
     ) or (
       params[:controller] == 'decidim/cookie_policy'
+    ) or (
+      params[:controller] == 'decidim/errors'
     )
 
       return true

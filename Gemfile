@@ -7,6 +7,8 @@ gem "decidim", '0.5.1'
 gem 'uglifier', '>= 1.3.0'
 
 gem 'rack-attack'
+gem 'country_select', require: 'country_select_without_sort_alphabetical'
+gem 'language_list'
 
 group :development, :test do
   gem 'byebug', platform: :mri

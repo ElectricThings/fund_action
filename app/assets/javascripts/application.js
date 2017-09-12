@@ -12,5 +12,6 @@
 //
 //= require rails-ujs
 //= require decidim
+//= require decidim/editor
 //= require chosen.jquery
 //= require_tree .

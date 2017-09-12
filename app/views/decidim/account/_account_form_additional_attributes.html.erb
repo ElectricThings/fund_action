@@ -1,0 +1,8 @@
+<label for="user_country">
+  <%= t 'country', scope: %i(activemodel attributes user) %>
+  <%= form.country_select :country, { include_blank: true }, { data: { placeholder: t('.choose_country') } } %>
+</label>
+
+<%= form.select :languages, language_select_options(form.object.languages), {}, { multiple: true, data: { placeholder: t('.choose_languages') } } %>
+
+<%= form.editor :about_me, toolbar: :full, lines: 10 %>

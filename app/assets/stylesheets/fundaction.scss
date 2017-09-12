@@ -1,5 +1,9 @@
 .chosen-container {
   margin-bottom: 1rem;
+  width: 100%;
+}
+.chosen-container-single {
+  font-size: inherit;
 }
 .chosen-container-single .chosen-single,
 .chosen-container-multi .chosen-choices {
@@ -18,3 +22,15 @@
 .chosen-container-active .chosen-choices {
   border: 1px solid red;
 }
+
+.chosen-container-single .chosen-single div b {
+  background: url("chosen-sprite.png") no-repeat 0px 10px;
+}
+.chosen-container-single.chosen-container-active .chosen-single div b {
+  background-position: -18px 12px;
+}
+
+
+// decidim bug?
+
+.ql-toolbar button.ql-video { margin: auto; }
