@@ -11,5 +11,6 @@
 // about supported directives.
 //
 //= require rails-ujs
-//= require_tree .
 //= require decidim
+//= require chosen.jquery
+//= require_tree .
