@@ -21,6 +21,8 @@ group :development do
   gem 'letter_opener_web', '~> 1.3.0'
 
   gem 'capistrano'
+  gem 'capistrano-rails', require: false
+  gem 'capistrano-chruby', require: false
 end
 
 group :production do
