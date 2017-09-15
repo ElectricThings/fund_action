@@ -2,9 +2,8 @@
 # frozen_string_literal: true
 
 Decidim.configure do |config|
-  config.application_name = "FundAction"
-  # TODO change this
-  config.mailer_sender = "jk+decidim@electric-things.com"
+  config.application_name = "FundAction's Assembly"
+  config.mailer_sender = "assembly@fundaction.eu"
 
   config.authorization_handlers = [AnybodyAuthorizationHandler]
 
