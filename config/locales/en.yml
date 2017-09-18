@@ -48,3 +48,9 @@ en:
         country: I'm from %{country}.
         i_speak: I speak %{languages}.
 
+  pages:
+    home:
+      footer_sub_hero:
+        fa_footer_sub_hero_body: "To share information about FundAction and the great work we're doing,<br> please refer non-members to our website:"
+        fa_footer_sub_hero_headline: Welcome to %{organization}.
+
