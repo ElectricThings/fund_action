@@ -2,7 +2,8 @@ source "https://rubygems.org"
 
 ruby '2.4.1'
 
-gem "decidim", path: '../decidim'
+#gem "decidim", path: '../decidim'
+gem "decidim", github: 'electricthings/decidim', branch: 'fundaction/0.6-stable'
 
 gem 'uglifier', '>= 1.3.0'
 
@@ -12,7 +13,8 @@ gem 'language_list'
 
 group :development, :test do
   gem 'byebug', platform: :mri
-  gem "decidim-dev", path: '../decidim'
+  #gem "decidim-dev", path: '../decidim'
+  gem "decidim-dev", github: 'electricthings/decidim', branch: 'fundaction/0.6-stable'
   #gem 'faker', '~> 1.8.4'
 end
 
