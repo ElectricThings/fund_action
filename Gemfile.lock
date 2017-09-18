@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/electricthings/decidim.git
-  revision: f34e04b6fe05c8bafbc6c181671891c00de5df4e
+  revision: 0779ac2e79f1d42419066c66ee707fc1e60bcd8a
   branch: fundaction/0.6-stable
   specs:
     decidim (0.6.1)
