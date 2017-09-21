@@ -4,7 +4,7 @@ lock "3.9.1"
 set :application, "fund_action"
 set :repo_url, "git@code.jkraemer.net:fund_action.git"
 
-set :chruby_ruby, 'ruby-2.4.1'
+set :chruby_ruby, 'ruby-2.4.2'
 
 set :bundle_jobs, 2
 set :bundle_binstubs, -> { shared_path.join('bin') }

@@ -1,6 +1,6 @@
 source "https://rubygems.org"
 
-ruby '2.4.1'
+ruby '2.4.2'
 
 #gem "decidim", path: '../decidim'
 gem "decidim", github: 'electricthings/decidim', branch: 'fundaction/0.6-stable'
