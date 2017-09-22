@@ -11,6 +11,10 @@ en:
         choose_country: Select the country you live in...
         choose_languages: Select the languages you speak...
 
+    authorization_handlers:
+      anybody_authorization_handler:
+        name: Default
+
     user_profiles:
       user_profile_bottom:
         country: I'm from %{country}.
