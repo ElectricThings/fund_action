@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/electricthings/decidim.git
-  revision: 3246aa97b338c797d2324a8f3a329a16adad4d13
+  revision: 1a0defc1f7781a502799b8d2d9346fdf110d5b46
   branch: fundaction/0.6-stable
   specs:
     decidim (0.6.1)
@@ -194,7 +194,7 @@ GEM
       tzinfo (~> 1.1)
     addressable (2.5.2)
       public_suffix (>= 2.0.2, < 4.0)
-    airbrake (6.3.0)
+    airbrake (7.0.0)
       airbrake-ruby (~> 2.4)
     airbrake-ruby (2.4.0)
     airbrussh (1.3.0)
