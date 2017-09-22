@@ -28,6 +28,7 @@ en:
   invitations:
     index:
       new: New invitation
+      no_invitations: You currently cannot invite new members.
       confirm_destroy: Revoke this invitation?
     destroy:
       success: Invitation revoked.
@@ -36,12 +37,13 @@ en:
       one: Could not send the invitation.
       other: Could not send the invitations.
     new:
+      admin_instructions: "Please enter the names and email addresses you want to send invitations to. Use one line per person and separate name and address with a comma. For example:"
       create: Send
-      name: Name
       email: Email address
       emails: Users to invite
+      name: Name
+      num_invites: Number of invites to grant to each user
       title: New invitation
-      unlimited: "Please enter the names and email addresses you want to send invitations to. Use one line per person and separate name and address with a comma. For example:"
       you_have_x_invites_left:
         zero: You have used up all invitations.
         one: You can invite one more person.
@@ -49,7 +51,9 @@ en:
     sent:
       one: Invitation sent successfully.
       other: "%{count} invitations were sent."
-    some_errors: "%{count} out of %{total} invitations could not be sent."
+    some_errors:
+      one: "%{count} invitation was sent, but %{errors} could not be sent."
+      other: "%{count} invitations were sent, %{errors} could not be sent."
 
   layouts:
     decidim:

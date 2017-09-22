@@ -1,5 +1,7 @@
 <% if current_user.has_invitations_left? %>
   <%= link_to t('.new'), new_user_invitation_path, class: 'button' %>
+<% else %>
+  <p><%= t '.no_invitations' %></p>
 <% end %>
 
 <% if @users.any? %>

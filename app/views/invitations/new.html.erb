@@ -1,19 +1,22 @@
 <p>
   <% if current_user.invitation_limit %>
     <%= t '.you_have_x_invites_left', count: current_user.invitation_limit.to_i %>
-  <% else %>
-      <%= t '.unlimited' %>
-      <small><pre>John Doe, john.doe@example.org</pre></small>
+  <% end %>
+
+  <% if current_user.admin? %>
+    <%= t '.admin_instructions' %>
+    <small><pre>John Doe, john.doe@example.org</pre></small>
   <% end %>
 </p>
 
 <%= decidim_form_for(@form, url: user_invitations_path, html: { class: "form new_user" }) do |f| %>
 <div class="row column">
-  <% if current_user.invitation_limit %>
+  <% if current_user.admin? %>
+    <%= f.text_area :emails, label: t('.emails'), rows: 10 %>
+    <%= f.text_field :num_invites, label: t('.num_invites') %>
+  <% else %>
     <%= f.text_field :name, label: t('.name') %>
     <%= f.email_field :email, label: t('.email') %>
-  <% else %>
-    <%= f.text_area :emails, label: t('.emails'), rows: 10 %>
   <% end %>
 </div>
 

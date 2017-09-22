@@ -13,7 +13,14 @@ module FundAction
         return broadcast(:invalid)
       end
 
-      @user.destroy
+      Decidim::User.transaction do
+        if inviter = @user.invited_by
+          # unused invitation do not count towards the limit
+          inviter.increment_invitation_limit!
+        end
+        @user.destroy
+      end
+
       broadcast(:ok)
     end
 

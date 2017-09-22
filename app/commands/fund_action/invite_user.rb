@@ -8,7 +8,7 @@ module FundAction
         name: form.name,
         email: form.email.downcase,
         organization: form.organization,
-        invitation_limit: 5,
+        invitation_limit: form.num_invites,
         admin: false,
         roles: []
       )

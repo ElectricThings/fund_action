@@ -5,15 +5,10 @@ class ApplicationController < ActionController::Base
   private
 
   def login_required?
-    unless (
-      params[:controller] == 'decidim/pages' and
-      params[:action] == 'show' and
-      params[:id] == 'terms-and-conditions'
-    ) or (
-      params[:controller] == 'decidim/cookie_policy'
-    ) or (
-      params[:controller] == 'decidim/errors'
-    )
+    unless %w(
+      decidim/cookie_policy
+      decidim/errors
+    ).include? params[:controller]
 
       return true
     end

@@ -10,19 +10,22 @@ class InvitationsController < Decidim::ApplicationController
 
   def index
     authorize! :update, current_user
-    @users = current_organization.users.where(invited_by: current_user).page.per(20)
+    @users = current_organization.users.
+      where(invited_by: current_user).page.per(20).
+      order(created_at: :asc)
   end
 
   def new
     authorize! :invite, current_user
     @form = form(FundAction::InviteUserForm).instance
+    @form.num_invites = 5
   end
 
   def create
     authorize! :invite, current_user
     @form = form(FundAction::InviteUserForm).from_params params
 
-    FundAction::InviteUsers.(@form) do
+    FundAction::InviteUsers.(@form, current_user) do
       on(:ok) do |successes|
         flash[:notice] = I18n.t("invitations.sent", count: successes.size)
         redirect_to user_invitations_path
@@ -30,7 +33,7 @@ class InvitationsController < Decidim::ApplicationController
 
       on(:invalid) do |successes, errors|
         if successes.any?
-          flash.now[:alert] = I18n.t("invitations.some_errors", errors: errors.size, successes: successes.size)
+          flash.now[:alert] = I18n.t("invitations.some_errors", errors: errors.size, count: successes.size)
         else
           flash.now[:alert] = I18n.t("invitations.error", count: errors.size)
         end
@@ -87,7 +90,7 @@ class InvitationsController < Decidim::ApplicationController
 
   def check_remaining_invites
     unless current_user.has_invitations_left?
-      redirect_to invitations_path
+      redirect_to user_invitations_path
       return false
     end
   end
