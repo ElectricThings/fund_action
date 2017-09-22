@@ -16,6 +16,41 @@ en:
         country: I'm from %{country}.
         i_speak: I speak %{languages}.
 
+  devise:
+    mailer:
+      invited_by_user:
+        subject: "Your invitation to FundAction's Assembly"
+        ignore: |-
+          If you don't want to accept the invitation, please ignore this email.
+          Your account won't be created until you access the link above and set your password.
+        invited_you: "%{invited_by} has invited you to %{application}, you can accept it through the link below."
+
+  invitations:
+    index:
+      new: New invitation
+      confirm_destroy: Revoke this invitation?
+    destroy:
+      success: Invitation revoked.
+      error: Invitation could not be revoked.
+    error:
+      one: Could not send the invitation.
+      other: Could not send the invitations.
+    new:
+      create: Send
+      name: Name
+      email: Email address
+      emails: Users to invite
+      title: New invitation
+      unlimited: "Please enter the names and email addresses you want to send invitations to. Use one line per person and separate name and address with a comma. For example:"
+      you_have_x_invites_left:
+        zero: You have used up all invitations.
+        one: You can invite one more person.
+        other: You can invite %{count} more persons.
+    sent:
+      one: Invitation sent successfully.
+      other: "%{count} invitations were sent."
+    some_errors: "%{count} out of %{total} invitations could not be sent."
+
   layouts:
     decidim:
       user_profile:

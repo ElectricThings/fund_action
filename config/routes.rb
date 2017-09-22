@@ -1,5 +1,12 @@
 Rails.application.routes.draw do
 
+  resources :user_invitations, controller: :invitations,
+    only: %i(index new create destroy ) do
+
+    member do
+      patch :resend
+    end
+  end
 
   if Rails.env.development?
    mount LetterOpenerWeb::Engine, at: "/letter_opener"

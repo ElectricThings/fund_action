@@ -1,0 +1,47 @@
+<% if current_user.has_invitations_left? %>
+  <%= link_to t('.new'), new_user_invitation_path, class: 'button' %>
+<% end %>
+
+<% if @users.any? %>
+<div class="table-scroll">
+  <table class="table-list">
+    <thead>
+      <tr>
+        <th><%= t("models.user.fields.name", scope: "decidim.admin") %></th>
+        <th><%= t("models.user.fields.email", scope: "decidim.admin") %></th>
+        <th><%= t("models.user.fields.invitation_sent_at", scope: "decidim.admin") %></th>
+        <th><%= t("models.user.fields.invitation_accepted_at", scope: "decidim.admin") %></th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @users.each do |user| %>
+        <tr data-user-id="<%= user.id %>">
+          <td><%= user.name %></td>
+          <td><%= user.email %></td>
+          <td>
+            <% if user.invitation_sent_at %>
+              <%= l user.invitation_sent_at, format: :short %>
+            <% end %>
+          </td>
+          <td>
+            <% if user.invitation_accepted_at %>
+              <%= l user.invitation_accepted_at, format: :short %>
+            <% end %>
+          </td>
+          <td class="table-list__actions">
+            <% if can?(:invite, user) && user.invited_to_sign_up? %>
+              <%= icon_link_to "reload", resend_user_invitation_path(user), t("actions.resend_invitation", scope: "decidim.admin"), class: "resend-invitation", method: :patch %>
+            <% end %>
+
+            <% if can? :delete, user %>
+              <%= icon_link_to "circle-x", user_invitation_path(user), t("actions.destroy", scope: "decidim.admin"), class: "action-icon--remove", method: :delete, data: { confirm: t(".confirm_destroy") } %>
+            <% end %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <%= paginate @users, theme: "decidim" %>
+</div>
+<% end %>

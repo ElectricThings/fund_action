@@ -1,8 +1,6 @@
 # -*- coding: utf-8 -*-
 # frozen_string_literal: true
 
-require 'fund_action/abilities'
-
 Decidim.configure do |config|
   config.application_name = "FundAction's Assembly"
   config.mailer_sender = "assembly@fundaction.eu"
