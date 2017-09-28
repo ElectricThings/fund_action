@@ -30,6 +30,8 @@ Decidim.configure do |config|
   # config.max_reports_before_hiding = 3
 
   config.abilities << 'FundAction::Abilities'
+
+  config.enable_html_header_snippets = false
 end
 
 Rails.application.config.i18n.available_locales = Decidim.available_locales
