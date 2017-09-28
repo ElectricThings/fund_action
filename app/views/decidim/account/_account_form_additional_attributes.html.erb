@@ -4,5 +4,7 @@
 </label>
 
 <%= form.select :languages, language_select_options(form.object.languages), {}, { multiple: true, data: { placeholder: t('.choose_languages') } } %>
+<%= form.select :areas_of_interest, area_of_interest_select_options(form.object.areas_of_interest), {}, { multiple: true, data: { placeholder: t('.choose_areas_of_interest') } } %>
+<%= form.text_field :other_area_of_interest, placeholder: t('.other_area_of_interest') %>
 
 <%= form.editor :about_me, toolbar: :full, lines: 10 %>

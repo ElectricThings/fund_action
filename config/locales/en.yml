@@ -4,12 +4,16 @@ en:
       user:
         country: Country
         languages: Languages
+        areas_of_interest: Areas of interest
+        other_area_of_interest: ""
 
   decidim:
     account:
       account_form_additional_attributes:
         choose_country: Select the country you live in...
         choose_languages: Select the languages you speak...
+        choose_areas_of_interest: Select your areas of interest...
+        other_area_of_interest: Other (please specify)
 
     authorization_handlers:
       anybody_authorization_handler:
@@ -19,6 +23,7 @@ en:
       user_profile_bottom:
         country: I'm from %{country}.
         i_speak: I speak %{languages}.
+        areas_of_interest: I'm interested in %{areas}.
 
   devise:
     mailer:

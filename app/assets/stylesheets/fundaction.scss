@@ -4,10 +4,13 @@
 }
 .chosen-container-single {
   font-size: inherit;
+  .chosen-single {
+    height: 2.4375rem;
+  }
+
 }
 .chosen-container-single .chosen-single,
 .chosen-container-multi .chosen-choices {
-  height: 2.4375rem;
   padding: 0.5rem;
   border: 1px solid #e8e8e8;
   border-radius: 4px;

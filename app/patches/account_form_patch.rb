@@ -6,6 +6,8 @@ module AccountFormPatch
         attribute :about_me
         attribute :country
         attribute :languages
+        attribute :areas_of_interest
+        attribute :other_area_of_interest
       end
     end
   end
@@ -16,6 +18,8 @@ module AccountFormPatch
       self.about_me  = profile['about_me']
       self.country   = profile['country']
       self.languages = profile['languages']
+      self.areas_of_interest = profile['areas_of_interest']
+      self.other_area_of_interest = profile['other_area_of_interest']
     end
   end
 

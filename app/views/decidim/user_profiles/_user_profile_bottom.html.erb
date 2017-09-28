@@ -6,6 +6,10 @@
   <p><%= t '.i_speak', languages: languages.to_sentence %></p>
 <% end %>
 
+<% if areas_of_interest = @user.areas_of_interest %>
+  <p><%= t '.areas_of_interest', areas: areas_of_interest.to_sentence %></p>
+<% end %>
+
 <% if @user.about_me.present? %>
   <%= sanitize @user.about_me %>
 <% end %>

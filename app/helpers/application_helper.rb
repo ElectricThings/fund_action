@@ -10,4 +10,10 @@ module ApplicationHelper
     )
   end
 
+  def area_of_interest_select_options(selected_areas_of_interest = [])
+    options_from_collection_for_select(
+      AreaOfInterest.to_a, :first, :last, selected_areas_of_interest
+    )
+  end
+
 end

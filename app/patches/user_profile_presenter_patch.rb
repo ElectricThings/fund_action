@@ -10,6 +10,20 @@ module UserProfilePresenterPatch
     end
   end
 
+  def areas_of_interest
+    if areas = profile_attr('areas_of_interest')
+      areas = areas.map{ |name| AreaOfInterest.for(name) }.compact
+      if other = other_area_of_interest
+        areas << other
+      end
+      areas
+    end
+  end
+
+  def other_area_of_interest
+    profile_attr('other_area_of_interest').presence
+  end
+
   def country
     if country_code = profile_attr('country') and
        country = ISO3166::Country[country_code]
