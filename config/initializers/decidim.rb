@@ -31,6 +31,9 @@ Decidim.configure do |config|
 
   config.abilities << 'FundAction::Abilities'
 
+  config.maximum_attachment_size = 10.megabytes
+  config.maximum_avatar_size     = 10.megabytes
+
   config.enable_html_header_snippets = false
 end
 
