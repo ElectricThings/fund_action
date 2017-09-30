@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/electricthings/decidim.git
-  revision: 68792c3167b20620aa4a931b49627d47f074696e
+  revision: 4fcf40b0d96f0cca750db525fd8fce68d4e11cd3
   branch: fundaction/0.6-stable
   specs:
     decidim (0.6.4)
@@ -307,7 +307,7 @@ GEM
     equalizer (0.0.11)
     erubi (1.6.1)
     execjs (2.7.0)
-    factory_girl (4.8.0)
+    factory_girl (4.8.1)
       activesupport (>= 3.0.0)
     factory_girl_rails (4.8.0)
       factory_girl (~> 4.8.0)
@@ -515,7 +515,7 @@ GEM
       activesupport (>= 4.1.0)
       virtus (~> 1.0.5)
       wisper (>= 1.6.1)
-    redis (3.3.3)
+    redis (3.3.5)
     responders (2.4.0)
       actionpack (>= 4.2.0, < 5.3)
       railties (>= 4.2.0, < 5.3)
