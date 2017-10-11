@@ -1,6 +1,6 @@
-module UserProfilePresenterPatch
+module MemberPresenterPatch
   def self.apply
-    Decidim::UserProfilePresenter.prepend self unless Decidim::UserProfilePresenter < self
+    Decidim::Members::MemberPresenter.prepend self unless Decidim::Members::MemberPresenter < self
   end
 
 

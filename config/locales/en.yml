@@ -22,7 +22,7 @@ en:
       anybody_authorization_handler:
         name: Default
 
-    user_profiles:
+    members:
       user_profile_bottom:
         country: I'm from %{country}.
         i_speak: I speak %{languages}.
