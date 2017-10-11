@@ -14,3 +14,15 @@
   <%= sanitize @user.about_me %>
 <% end %>
 
+
+<% if current_user&.admin? %>
+  <h4>Private information</h4>
+  <p>
+  <strong>Gender:</strong>
+  <%= @user.gender %>
+  </p>
+  <p>
+    <strong>Can contribute</strong><br>
+    <%= @user.can_contribute %>
+  </p>
+<% end %>

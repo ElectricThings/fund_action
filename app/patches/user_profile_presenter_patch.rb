@@ -36,6 +36,14 @@ module UserProfilePresenterPatch
     profile_attr 'about_me'
   end
 
+  def gender
+    profile_attr 'gender'
+  end
+
+  def can_contribute
+    profile_attr 'can_contribute'
+  end
+
   private
 
   def profile_attr(name)

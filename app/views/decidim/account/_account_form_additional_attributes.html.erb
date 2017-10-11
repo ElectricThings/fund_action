@@ -1,3 +1,7 @@
+<%= form.text_field :gender %>
+<p class="help-text"><%= t(".gender_hint") %></p>
+
+
 <label for="user_country">
   <%= t 'country', scope: %i(activemodel attributes user) %>
   <%= form.country_select :country, { include_blank: true }, { data: { placeholder: t('.choose_country') } } %>
@@ -8,3 +12,6 @@
 <%= form.text_field :other_area_of_interest, placeholder: t('.other_area_of_interest') %>
 
 <%= form.editor :about_me, toolbar: :full, lines: 10 %>
+
+<%= form.text_area :can_contribute, rows: 5 %>
+<p class="help-text"><%= t(".can_contribute_hint") %></p>

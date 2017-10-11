@@ -6,13 +6,16 @@ en:
         languages: Languages
         areas_of_interest: Areas of interest
         other_area_of_interest: ""
+        can_contribute: "I would like to deepen my involvement with FundAction and could contribute in the following areas:"
 
   decidim:
     account:
       account_form_additional_attributes:
+        can_contribute_hint: "E.g. social media, community management, platform/website management, communication, fundraising,.... This is only for our information and will not be part of your public profile."
         choose_country: Select the country you live in...
         choose_languages: Select the languages you speak...
         choose_areas_of_interest: Select your areas of interest...
+        gender_hint: Share a word or words that reflect your internal sense of your gender (e.g. woman, man, non-binary). This will not be part of your public profile.
         other_area_of_interest: Other (please specify)
 
     authorization_handlers:

@@ -7,7 +7,9 @@ module UpdateAccountPatch
   def update_personal_data
     super
     @user.profile = {
+      can_contribute: @form.can_contribute,
       country: @form.country,
+      gender: @form.gender,
       languages: @form.languages.reject(&:blank?),
       about_me: @form.about_me,
       areas_of_interest: @form.areas_of_interest.reject(&:blank?),
