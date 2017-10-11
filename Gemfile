@@ -5,6 +5,7 @@ ruby '2.4.2'
 #gem "decidim", path: '../decidim'
 gem "decidim", github: 'electricthings/decidim', branch: 'fundaction/0.6-stable'
 #gem "decidim-members", path: '../decidim-members'
+gem 'decidim-members', github: 'electricthings/decidim-members'
 
 gem 'uglifier', '>= 1.3.0'
 

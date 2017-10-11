@@ -10,10 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170917073246) do
+ActiveRecord::Schema.define(version: 20171003121327) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+  enable_extension "unaccent"
 
   create_table "decidim_assemblies", id: :serial, force: :cascade do |t|
     t.string "slug", null: false
@@ -593,6 +594,7 @@ ActiveRecord::Schema.define(version: 20170917073246) do
     t.string "roles", default: [], array: true
     t.jsonb "profile"
     t.boolean "email_on_notification", default: false, null: false
+    t.tsvector "tsv"
     t.index ["confirmation_token"], name: "index_decidim_users_on_confirmation_token", unique: true
     t.index ["decidim_organization_id"], name: "index_decidim_users_on_decidim_organization_id"
     t.index ["email", "decidim_organization_id"], name: "index_decidim_users_on_email_and_decidim_organization_id", unique: true, where: "((deleted_at IS NULL) AND (managed = false))"
@@ -600,6 +602,7 @@ ActiveRecord::Schema.define(version: 20170917073246) do
     t.index ["invitations_count"], name: "index_decidim_users_on_invitations_count"
     t.index ["invited_by_id"], name: "index_decidim_users_on_invited_by_id"
     t.index ["reset_password_token"], name: "index_decidim_users_on_reset_password_token", unique: true
+    t.index ["tsv"], name: "decidim_users_tsv_idx", using: :gin
   end
 
   create_table "delayed_jobs", force: :cascade do |t|
