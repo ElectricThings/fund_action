@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/electricthings/decidim-members.git
-  revision: ec38c9c1698529c8139806c35ff33ad92fd1e3cd
+  revision: 2cc15232434ffb43bdf4931de4a35ae0fdbaf7e4
   specs:
     decidim-members (0.1.0)
       decidim-core (>= 0.6.4)
