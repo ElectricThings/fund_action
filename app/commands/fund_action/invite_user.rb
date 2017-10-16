@@ -9,6 +9,7 @@ module FundAction
         email: form.email.downcase,
         organization: form.organization,
         invitation_limit: form.num_invites,
+        newsletter_notifications: true,
         admin: false,
         roles: []
       )
