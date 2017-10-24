@@ -9,7 +9,7 @@ GIT
 
 GIT
   remote: git://github.com/electricthings/decidim.git
-  revision: 2c1234876433133af969be5012dbf0baf67931c1
+  revision: 246ec8e3ff0bbf8be1697673c997319713a524a0
   branch: fundaction/0.6-stable
   specs:
     decidim (0.6.7)
@@ -209,7 +209,7 @@ GEM
       sshkit (>= 1.6.1, != 1.7.0)
     arel (8.0.0)
     ast (2.3.0)
-    autoprefixer-rails (7.1.5)
+    autoprefixer-rails (7.1.6)
       execjs
     axiom-types (0.1.1)
       descendants_tracker (~> 0.0.4)
