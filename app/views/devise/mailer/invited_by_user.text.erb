@@ -1,15 +1,36 @@
-<%= t("devise.mailer.invitation_instructions.hello", email: @resource.name) %>
+Hey there,
 
-<% if @resource.invited_by.present? %>
-<%= t("devise.mailer.invited_by_user.invited_you", invited_by: @resource.invited_by.name, application: @resource.organization.name) %>
-<% else %>
-<%= t("devise.mailer.invitation_instructions.someone_invited_you", application: @resource.organization.name) %>
-<% end %>
+Congratulations! You are invited to join FundAction’s assembly.
+
+FundAction is a fund for activists and run by activists. Our growing community
+takes all grant decisions via the online assembly, our tool for grant
+proposals, discussions and community voting.
+
+To find out more about us, our grants and overall approach, check out our
+website at http://www.fundaction.eu !
+
+Ready to join us? Click on the link below, complete your profile info, agree to
+our values, and take a look around the platform. See if there are open
+application processes (https://assembly.fundaction.eu/processes) to get an idea
+about the funding proposals, discussions and voting procedure. Refer to the
+FAQs (https://assembly.fundaction.eu/pages/faq) if you have any questions.
+
+CLICK HERE TO JOIN:
 
 <%= accept_invitation_url(@resource, invitation_token: @token, invite_redirect: '/account', host: @resource.organization.host) %>
+
+We hope to see you there!
+
+
+The FundAction assembly
+
+
+--
 
 <% if @resource.invitation_due_at %>
 <%= t("devise.mailer.invitation_instructions.accept_until", due_date: l(@resource.invitation_due_at, format: :long)) %>
 <% end %>
 
 <%= t "devise.mailer.invited_by_user.ignore" %>
+
+

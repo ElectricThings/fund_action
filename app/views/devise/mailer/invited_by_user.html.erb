@@ -1,0 +1,34 @@
+<p>Hey there,</p>
+
+<p>Congratulations! You are invited to join FundAction’s assembly.</p>
+
+<p>FundAction is a fund for activists and run by activists. Our growing community
+takes all grant decisions via the online assembly, our tool for grant
+proposals, discussions and community voting.</p>
+
+<p>To find out more about us, our grants and overall approach, check out our
+website at http://www.fundaction.eu !</p>
+
+<p>Ready to join us? Click on the link below, complete your profile info, agree
+to our values, and take a look around the platform. See if there are open
+application processes (https://assembly.fundaction.eu/processes) to get an idea
+about the funding proposals, discussions and voting procedure. Refer to the
+<%= link_to 'FAQs', decidim.page_path('faq') %> if you have any questions.</p>
+
+<p><%= link_to 'CLICK HERE TO JOIN', accept_invitation_url(@resource, invitation_token: @token, invite_redirect: '/account', host: @resource.organization.host), style:"font-weight: bold;" %></p>
+
+<p>We hope to see you there!</p>
+
+<p>The FundAction assembly</p>
+
+
+<p style="margin: 1em 0;">--</p>
+
+<% if @resource.invitation_due_at %>
+  <p><%= t("devise.mailer.invitation_instructions.accept_until", due_date: l(@resource.invitation_due_at, format: :long)) %></p>
+<% end %>
+
+<p><%= t "devise.mailer.invited_by_user.ignore" %></p>
+
+
+
