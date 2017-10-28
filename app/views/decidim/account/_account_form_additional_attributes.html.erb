@@ -1,3 +1,12 @@
+<% if form.object.values_accepted? %>
+  <%= form.hidden_field :value_statement %>
+<% else %>
+  <p>
+  Please take a few minutes to read the <a href="/fundaction_values.pdf">FundAction value statement</a>.<br />
+    <%= form.check_box :value_statement, label: 'I read and accept the FundAction value statement' %>
+  </p>
+<% end %>
+
 <%= form.text_field :gender %>
 <p class="help-text"><%= t(".gender_hint") %></p>
 

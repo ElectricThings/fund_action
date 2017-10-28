@@ -10,8 +10,15 @@ module AccountFormPatch
         attribute :gender
         attribute :languages
         attribute :other_area_of_interest
+        attribute :value_statement
+
+        validates :value_statement, acceptance: true
       end
     end
+  end
+
+  def values_accepted?
+    value_statement == '1'
   end
 
   def map_model(user)
@@ -24,6 +31,7 @@ module AccountFormPatch
       self.gender = profile['gender']
       self.languages = profile['languages']
       self.other_area_of_interest = profile['other_area_of_interest']
+      self.value_statement = profile['value_statement']
     end
   end
 
