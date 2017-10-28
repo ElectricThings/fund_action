@@ -1,0 +1,45 @@
+<% add_decidim_page_title(t("devise.sessions.new.sign_in")) %>
+
+<main class="wrapper">
+  <div class="row collapse">
+    <div class="row collapse">
+      <div class="columns large-8 large-centered text-center page-title">
+        <h1 class="heading1">Hi there!</h1>
+      </div>
+    </div>
+    <div class="row">
+      <div class="columns large-6 medium-centered">
+        <div class="card">
+          <div class="card__content">
+            <p>Welcome to FundAction's online assembly.</p>
+            <p>If you are a member, please log in below. If you are an activist but not a member yet, please sign up for our <a href="https://www.fundaction.eu/#inaction/2">newsletter</a> and we'll let you know as soon as we grow our membership.</p>
+            <p>Onwards!<br>The people behind FundAction</p>
+
+            <%= decidim_form_for(resource, as: resource_name, url: session_path(resource_name), html: { class: "register-form new_user" }) do |f| %>
+              <div>
+                <div class="field">
+                  <%= f.email_field :email, autofocus: true  %>
+                </div>
+                <div class="field">
+                  <%= f.password_field :password, autocomplete: "off" %>
+                </div>
+              </div>
+              <fieldset>
+                <% if devise_mapping.rememberable? %>
+                  <div class="field">
+                    <%= f.check_box :remember_me %>
+                  </div>
+                <% end %>
+              </fieldset>
+              <div class="actions">
+                <%= f.submit t("devise.sessions.new.sign_in"), class: "button expanded" %>
+              </div>
+            <% end %>
+            <%= render "decidim/devise/shared/links" %>
+          </div>
+        </div>
+      </div>
+    </div>
+    <%= render "decidim/devise/shared/omniauth_buttons" %>
+  </div>
+</main>
