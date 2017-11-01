@@ -14,7 +14,8 @@ module UpdateAccountPatch
       about_me: @form.about_me,
       areas_of_interest: @form.areas_of_interest.reject(&:blank?),
       other_area_of_interest: @form.other_area_of_interest,
-      value_statement: @form.value_statement
+      value_statement: @form.value_statement,
+      cultural_background: @form.cultural_background,
     }
   end
 end

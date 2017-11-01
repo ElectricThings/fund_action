@@ -44,6 +44,10 @@ module MemberPresenterPatch
     profile_attr 'can_contribute'
   end
 
+  def cultural_background
+    profile_attr 'cultural_background'
+  end
+
   private
 
   def profile_attr(name)
