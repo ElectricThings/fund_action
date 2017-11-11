@@ -11,7 +11,7 @@ class InvitationsController < Decidim::ApplicationController
   def index
     authorize! :update, current_user
     @users = current_organization.users.
-      where(invited_by: current_user).page.per(20).
+      where(invited_by: current_user).page(params[:page]).per(20).
       order(created_at: :asc)
   end
 
