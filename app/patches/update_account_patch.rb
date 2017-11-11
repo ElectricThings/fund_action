@@ -16,6 +16,7 @@ module UpdateAccountPatch
       other_area_of_interest: @form.other_area_of_interest,
       value_statement: @form.value_statement,
       cultural_background: @form.cultural_background,
+      public_email: @form.public_email,
     }
   end
 end

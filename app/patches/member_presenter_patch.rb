@@ -3,6 +3,13 @@ module MemberPresenterPatch
     Decidim::Members::MemberPresenter.prepend self unless Decidim::Members::MemberPresenter < self
   end
 
+  def public_email?
+    profile_attr('public_email') == '1'
+  end
+
+  def email
+    user.email
+  end
 
   def languages
     if codes = profile_attr('languages')

@@ -12,6 +12,7 @@ module AccountFormPatch
         attribute :other_area_of_interest
         attribute :value_statement
         attribute :cultural_background
+        attribute :public_email
 
         validates :value_statement, acceptance: true
       end
@@ -34,6 +35,7 @@ module AccountFormPatch
       self.other_area_of_interest = profile['other_area_of_interest']
       self.value_statement = profile['value_statement']
       self.cultural_background = profile['cultural_background']
+      self.public_email = profile['public_email']
     end
   end
 

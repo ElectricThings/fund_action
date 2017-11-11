@@ -29,6 +29,7 @@ en:
         country: I'm from %{country}.
         i_speak: I speak %{languages}.
         areas_of_interest: I'm interested in %{areas}.
+        you_can_reach_me_html: You can reach me at %{mail}.
 
   devise:
     mailer:

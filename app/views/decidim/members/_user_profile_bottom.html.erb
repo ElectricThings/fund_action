@@ -14,8 +14,15 @@
   <%= sanitize user.about_me %>
 <% end %>
 
+<% if user.public_email? %>
+  <p><%= t '.you_can_reach_me_html', mail: mail_to(user.email) %></p>
+<% end %>
+
 <% if current_user&.admin? %>
   <h4>Private information</h4>
+  <% unless user.public_email? %>
+    <p>Email: <%= user.public_email %>
+  <% end %>
   <p>
   <strong>Gender:</strong>
   <%= user.gender %>
