@@ -21,7 +21,7 @@
 <% if current_user&.admin? %>
   <h4>Private information</h4>
   <% unless user.public_email? %>
-    <p>Email: <%= user.public_email %>
+    <p>Email: <%= user.email %>
   <% end %>
   <p>
   <strong>Gender:</strong>
