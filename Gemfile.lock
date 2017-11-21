@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/electricthings/decidim-members.git
-  revision: 2cc15232434ffb43bdf4931de4a35ae0fdbaf7e4
+  revision: 7c03666966c585630389fc066946611929c93dbb
   specs:
     decidim-members (0.1.0)
       decidim-core (>= 0.6.4)
@@ -465,7 +465,7 @@ GEM
       cliver (~> 0.3.1)
       websocket-driver (>= 0.2.0)
     powerpack (0.1.1)
-    premailer (1.11.0)
+    premailer (1.11.1)
       addressable
       css_parser (>= 1.6.0)
       htmlentities (>= 4.0.0)
@@ -473,12 +473,12 @@ GEM
       actionmailer (>= 3, < 6)
       premailer (~> 1.7, >= 1.7.9)
     public_suffix (3.0.1)
-    puma (3.10.0)
+    puma (3.11.0)
     rack (2.0.3)
     rack-attack (5.0.1)
       rack
     rack-cors (0.4.1)
-    rack-test (0.7.0)
+    rack-test (0.8.0)
       rack (>= 1.0, < 3)
     rails (5.1.4)
       actioncable (= 5.1.4)
@@ -513,7 +513,7 @@ GEM
     rainbow (2.2.2)
       rake
     raindrops (0.19.0)
-    rake (12.2.1)
+    rake (12.3.0)
     rb-fsevent (0.10.2)
     rb-inotify (0.9.10)
       ffi (>= 0.5.0, < 2)
@@ -608,7 +608,7 @@ GEM
       actionpack (>= 4.0)
       activesupport (>= 4.0)
       sprockets (>= 3.0.0)
-    sshkit (1.15.0)
+    sshkit (1.15.1)
       net-scp (>= 1.1.2)
       net-ssh (>= 2.8.0)
     terminal-table (1.8.0)
@@ -661,7 +661,7 @@ DEPENDENCIES
   airbrake
   bcrypt_pbkdf (>= 1.0, < 2.0)
   byebug
-  capistrano
+  capistrano (~> 3.10.0)
   capistrano-chruby
   capistrano-rails
   country_select
