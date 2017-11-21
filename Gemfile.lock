@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/electricthings/decidim-members.git
-  revision: 7c03666966c585630389fc066946611929c93dbb
+  revision: c0466b7859262279365864bbe52e7169a1f86b61
   specs:
     decidim-members (0.1.0)
       decidim-core (>= 0.6.4)
@@ -687,4 +687,4 @@ RUBY VERSION
    ruby 2.4.2p198
 
 BUNDLED WITH
-   1.15.4
+   1.16.0
