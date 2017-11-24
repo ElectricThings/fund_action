@@ -10,11 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171003121327) do
+ActiveRecord::Schema.define(version: 20171124012200) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
   enable_extension "unaccent"
+  enable_extension "pg_trgm"
 
   create_table "decidim_assemblies", id: :serial, force: :cascade do |t|
     t.string "slug", null: false
@@ -404,7 +405,7 @@ ActiveRecord::Schema.define(version: 20171003121327) do
     t.text "address"
     t.float "latitude"
     t.float "longitude"
-    t.index ["body"], name: "decidim_proposals_proposal_body_search"
+    t.index "body gist_trgm_ops", name: "decidim_proposals_proposal_body_search", using: :gist
     t.index ["created_at"], name: "index_decidim_proposals_proposals_on_created_at"
     t.index ["decidim_author_id"], name: "index_decidim_proposals_proposals_on_decidim_author_id"
     t.index ["decidim_feature_id"], name: "index_decidim_proposals_proposals_on_decidim_feature_id"
