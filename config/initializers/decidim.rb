@@ -3,7 +3,7 @@
 
 Decidim.configure do |config|
   config.application_name = "FundAction's Assembly"
-  config.mailer_sender = "assembly@fundaction.eu"
+  config.mailer_sender = %{FundAction's Assembly <assembly@fundaction.eu>}
 
   config.authorization_handlers = [AnybodyAuthorizationHandler]
 
