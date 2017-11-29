@@ -17,6 +17,8 @@ module FundAction
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
 
+    config.time_zone = 'Berlin'
+
     config.to_prepare do
       #Dir[Rails.root/'app/patches/**/*.rb'].each do |file|
       #  require_dependency file
