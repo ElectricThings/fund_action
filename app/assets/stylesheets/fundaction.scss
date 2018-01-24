@@ -33,6 +33,10 @@
   background-position: -18px 12px;
 }
 
+// hide stuff in print
+@media print {
+  .author-data img, nav.navbar, .language-choose, .topbar__user__logged, .process-nav { display: none }
+}
 
 // decidim bug?
 
