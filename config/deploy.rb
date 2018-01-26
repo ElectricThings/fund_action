@@ -1,5 +1,5 @@
 # config valid only for current version of Capistrano
-lock "3.10.0"
+lock "3.10.1"
 
 set :application, "fund_action"
 set :repo_url, "git@code.jkraemer.net:fund_action.git"
