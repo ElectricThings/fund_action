@@ -1,6 +1,6 @@
-module MemberPresenterPatch
+module UserPresenterPatch
   def self.apply
-    Decidim::Members::MemberPresenter.prepend self unless Decidim::Members::MemberPresenter < self
+    Decidim::UserPresenter.prepend self unless Decidim::UserPresenter < self
   end
 
   def public_email?
@@ -59,6 +59,10 @@ module MemberPresenterPatch
 
   def profile_attr(name)
     user.profile[name] if user.profile
+  end
+
+  def user
+    __getobj__
   end
 
 end

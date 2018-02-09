@@ -27,7 +27,7 @@ module FundAction
       AccountFormPatch.apply
       UpdateAccountPatch.apply
       UserPatch.apply
-      MemberPresenterPatch.apply
+      UserPresenterPatch.apply
     end
 
 

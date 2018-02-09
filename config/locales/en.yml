@@ -24,7 +24,7 @@ en:
       anybody_authorization_handler:
         name: Default
 
-    members:
+    profiles:
       user_profile_bottom:
         country: I'm from %{country}.
         i_speak: I speak %{languages}.
