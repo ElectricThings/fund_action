@@ -2,6 +2,7 @@
 
 class InvitationsController < Decidim::ApplicationController
   include Decidim::UserProfile
+  include Decidim::NeedsPermission
 
   helper 'decidim/admin/icon_link'
 
@@ -9,20 +10,20 @@ class InvitationsController < Decidim::ApplicationController
 
 
   def index
-    authorize! :update, current_user
+    enforce_permission_to :create, :invitations
     @users = current_organization.users.
       where(invited_by: current_user).page(params[:page]).per(20).
       order(created_at: :asc)
   end
 
   def new
-    authorize! :invite, current_user
+    enforce_permission_to :create, :invitations
     @form = form(FundAction::InviteUserForm).instance
     @form.num_invites = 5
   end
 
   def create
-    authorize! :invite, current_user
+    enforce_permission_to :create, :invitations
     @form = form(FundAction::InviteUserForm).from_params params
 
     FundAction::InviteUsers.(@form, current_user) do
@@ -47,7 +48,7 @@ class InvitationsController < Decidim::ApplicationController
   # resend invitation
   def resend
     user = find_user
-    authorize! :invite, user
+    enforce_permission_to :resend, :invitations, user: user
 
     Decidim::InviteUserAgain.(user, "invited_by_user") do
       on(:ok) do
@@ -66,7 +67,7 @@ class InvitationsController < Decidim::ApplicationController
   # revoke invitation
   def destroy
     user = find_user
-    authorize! :delete, user
+    enforce_permission_to :destroy, :invitations, user: user
 
     FundAction::RemoveInvitation.(user) do
       on(:ok) do
@@ -93,6 +94,14 @@ class InvitationsController < Decidim::ApplicationController
       redirect_to user_invitations_path
       return false
     end
+  end
+
+  def permission_class_chain
+    [ FundAction::Permissions ]
+  end
+
+  def permission_scope
+    :global
   end
 
 end

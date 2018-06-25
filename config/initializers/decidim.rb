@@ -29,8 +29,6 @@ Decidim.configure do |config|
   # The number of reports which an object can receive before hiding it
   # config.max_reports_before_hiding = 3
 
-  config.abilities << 'FundAction::Abilities'
-
   config.maximum_attachment_size = 10.megabytes
   config.maximum_avatar_size     = 10.megabytes
 
