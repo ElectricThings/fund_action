@@ -57,14 +57,7 @@ Rails.application.configure do
   # Prepend all log lines with the following tags.
   config.log_tags = [ :request_id ]
 
-  # Use default logging formatter so that PID and timestamp are not suppressed.
-  config.log_formatter = ::Logger::Formatter.new
-
   config.action_mailer.logger = nil
-
-  # Use a different logger for distributed setups.
-  require 'syslog/logger'
-  config.logger = ActiveSupport::TaggedLogging.new(Syslog::Logger.new 'rails_fundaction')
 
 
   # Rails cache configuration
