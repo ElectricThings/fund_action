@@ -4,7 +4,7 @@ ruby '2.4.4'
 
 #gem "decidim", path: '../decidim'
 gem "decidim-members", path: '../decidim-members'
-gem "decidim", github: 'electricthings/decidim', branch: 'fundaction/0.12-stable'
+gem "decidim", github: 'electricthings/decidim', branch: 'fundaction/0.13-stable'
 #gem 'decidim-members', github: 'electricthings/decidim-members'
 
 gem 'uglifier', '>= 1.3.0'
