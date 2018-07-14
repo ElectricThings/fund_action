@@ -1,6 +1,6 @@
 source "https://rubygems.org"
 
-ruby '2.4.4'
+ruby '2.5.1'
 
 #gem "decidim", path: '../decidim'
 #gem "decidim-members", path: '../decidim-members'
@@ -39,7 +39,6 @@ end
 group :production do
   gem 'daemons'
   gem 'delayed_job_active_record'
-  gem 'syslog_logger', github: 'jkraemer/syslog_logger'
   gem 'unicorn'
   gem 'dalli'
   gem 'airbrake'
