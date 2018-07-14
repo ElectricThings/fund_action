@@ -1,15 +1,15 @@
 # config valid only for current version of Capistrano
 lock "3.10.2"
 
-set :application, "fund_action"
+set :application, "fundaction"
 set :repo_url, "git@code.jkraemer.net:fund_action.git"
 
-set :chruby_ruby, 'ruby-2.4.2'
+set :chruby_ruby, 'ruby-2.5.1'
 
 set :bundle_jobs, 2
 set :bundle_binstubs, -> { shared_path.join('bin') }
 
-set :deploy_to, "/srv/webapps/fund_action"
+set :deploy_to, "/srv/webapps/fundaction"
 
 set :pty, true
 
@@ -26,8 +26,8 @@ namespace :deploy do
   desc 'Restart application'
   task :restart do
     on roles(:app), in: :sequence, wait: 5 do
-      sudo "/etc/init.d/unicorn reload fund_action"
-      sudo "/etc/init.d/delayed_job restart fund_action"
+      sudo "/etc/init.d/unicorn reload fundaction"
+      sudo "/etc/init.d/delayed_job restart fundaction"
     end
   end
 
