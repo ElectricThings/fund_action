@@ -13,6 +13,7 @@ gem 'rack-attack'
 gem 'country_select', require: 'country_select_without_sort_alphabetical'
 gem 'language_list'
 gem 'therubyracer'
+gem 'doorkeeper', '~> 4.4'
 
 group :development, :test do
   gem 'byebug', platform: :mri
