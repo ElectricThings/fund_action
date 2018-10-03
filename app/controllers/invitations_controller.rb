@@ -2,7 +2,6 @@
 
 class InvitationsController < Decidim::ApplicationController
   include Decidim::UserProfile
-  include Decidim::NeedsPermission
 
   helper 'decidim/admin/icon_link'
 
@@ -97,7 +96,9 @@ class InvitationsController < Decidim::ApplicationController
   end
 
   def permission_class_chain
-    [ FundAction::Permissions ]
+    super.tap do |chain|
+      chain << FundAction::Permissions
+    end
   end
 
   def permission_scope
