@@ -18,7 +18,7 @@ gem 'doorkeeper', '~> 4.4'
 group :development, :test do
   gem 'byebug', platform: :mri
   #gem "decidim-dev", path: '../decidim'
-  gem "decidim-dev", github: 'electricthings/decidim', branch: 'fundaction/0.13-stable'
+  #gem "decidim-dev", github: 'electricthings/decidim', branch: 'fundaction/0.13-stable'
   #gem 'faker', '~> 1.8.4'
 end
 
