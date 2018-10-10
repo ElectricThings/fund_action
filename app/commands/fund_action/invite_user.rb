@@ -6,6 +6,7 @@ module FundAction
     def invite_user
       @user = Decidim::User.new(
         name: form.name,
+        nickname: User.nicknamize(form.name, organization: form.organization),
         email: form.email.downcase,
         organization: form.organization,
         invitation_limit: form.num_invites,
