@@ -9,7 +9,7 @@ GIT
 
 GIT
   remote: git://github.com/electricthings/decidim.git
-  revision: 4b8f1ba8a01f93f0ab6850a028a2957e12627cdf
+  revision: 3a1b2c6a884113c6dd28a554266909f28c0d9d5b
   branch: fundaction/0.13-stable
   specs:
     decidim (0.13.1)
