@@ -412,8 +412,8 @@ GEM
     net-ssh (5.0.2)
     nio4r (2.3.1)
     nobspw (0.4.0)
-    nokogiri (1.10.2)
-      mini_portile2 (~> 2.4.0)
+    nokogiri (1.8.5)
+      mini_portile2 (~> 2.3.0)
     nokogumbo (1.5.0)
       nokogiri
     oauth (0.5.4)
