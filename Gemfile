@@ -1,6 +1,7 @@
 source "https://rubygems.org"
 
 ruby '2.5.1'
+gem "rails", "~> 5.2.1.1"
 
 #gem "decidim", path: '../decidim'
 #gem "decidim-members", path: '../decidim-members'
@@ -10,7 +11,8 @@ gem 'decidim-members', github: 'electricthings/decidim-members'
 gem 'uglifier', '>= 1.3.0'
 
 gem 'rack-attack'
-gem 'country_select', require: 'country_select_without_sort_alphabetical'
+
+gem 'country_select', "~> 3.1", require: 'country_select_without_sort_alphabetical'
 gem 'language_list'
 gem 'therubyracer'
 gem 'doorkeeper', '~> 4.4'
@@ -43,6 +45,6 @@ group :production do
   gem 'delayed_job_active_record'
   gem 'unicorn'
   gem 'dalli'
-  gem 'airbrake'
+  gem 'airbrake', "~> 7.3"
 end
 
