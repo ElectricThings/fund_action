@@ -6,6 +6,8 @@ gem "rails", "~> 5.2.1.1"
 #gem "decidim", path: '../decidim'
 #gem "decidim-members", path: '../decidim-members'
 gem "decidim", github: 'electricthings/decidim', branch: 'fundaction/0.13-stable'
+gem "decidim-calendar", git: "https://github.com/alabs/decidim-module-calendar", branch: "0.13-stable"
+gem "decidim-consultations"
 gem 'decidim-members', github: 'electricthings/decidim-members'
 
 gem 'uglifier', '>= 1.3.0'
@@ -25,6 +27,7 @@ group :development, :test do
 end
 
 group :development do
+  gem 'faker'
   gem 'puma', '~> 3.0'
   gem 'web-console'
   gem 'listen', '~> 3.1.0'
