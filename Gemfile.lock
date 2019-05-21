@@ -166,7 +166,7 @@ GIT
 
 GIT
   remote: https://github.com/alabs/decidim-module-calendar
-  revision: dbe8d873c9e1621b8f80b47473543d6ed39a661b
+  revision: 942cf84192e926bed7dd0eb85e08d2730e6f5f44
   branch: 0.13-stable
   specs:
     decidim-calendar (0.13.1)
@@ -422,7 +422,7 @@ GEM
       i18n (>= 0.6.4, < 1.1)
     multi_json (1.13.1)
     multi_xml (0.6.0)
-    multipart-post (2.1.0)
+    multipart-post (2.1.1)
     net-scp (1.2.1)
       net-ssh (>= 2.6.5)
     net-ssh (5.0.2)
