@@ -166,7 +166,7 @@ GIT
 
 GIT
   remote: https://github.com/alabs/decidim-module-calendar
-  revision: 79c8db28cd85e900e26df08422718af389d15aee
+  revision: 02699a5f782de8f69bebd2f80b924399bfc23bda
   branch: 0.13-stable
   specs:
     decidim-calendar (0.13.1)
