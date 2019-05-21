@@ -1,4 +1,6 @@
-set :deploy_to, "/srv/webapps/#{fetch :application}"
+set :deploy_to, "/srv/webapps/#{fetch :application}_stage"
+set :script_postfix, "_stage"
+set :rails_env, :production
 
 server 'case.jkraemer.net', user: 'deploy', roles: %w{web app db}
 

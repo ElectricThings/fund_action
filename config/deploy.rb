@@ -9,8 +9,6 @@ set :chruby_ruby, 'ruby-2.5.1'
 set :bundle_jobs, 2
 set :bundle_binstubs, -> { shared_path.join('bin') }
 
-set :deploy_to, "/srv/webapps/fundaction"
-
 set :pty, true
 
 append :linked_files, "config/database.yml", "config/secrets.yml"
@@ -20,14 +18,15 @@ append :linked_dirs, "log", "tmp", "vendor/bundle", "files", 'public/uploads'
 # set :default_env, { path: "/opt/ruby/bin:$PATH" }
 
 set :keep_releases, 5
+set :script_name, ->{"#{fetch :application}#{fetch :script_postfix}"}
 
 namespace :deploy do
 
   desc 'Restart application'
   task :restart do
     on roles(:app), in: :sequence, wait: 5 do
-      sudo "/bin/systemctl reload fundaction_unicorn"
-      sudo "/bin/systemctl reload fundaction_delayed_job"
+      sudo "/bin/systemctl reload #{fetch :script_name}_unicorn"
+      sudo "/bin/systemctl reload #{fetch :script_name}_delayed_job"
     end
   end
 
