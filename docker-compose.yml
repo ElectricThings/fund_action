@@ -1,20 +1,54 @@
-version: '2'
+---
+version: '3.1'
 services:
   app:
-    build:
-      context: .
-      args:
-        rails_env: development
+    build: .
     volumes:
-      - .:/code
+      - .:/app
+      - app_assets:/app/public/assets/
+      - app_bundle:/app/vendor/bundle
+      - app_file_storage:/app/public/system/
+      - app_logs:/app/log/
+      - ~/.ssh:/root/.ssh
+      - $SSH_AUTH_SOCK:/ssh-agent
     environment:
+      - PORT=3000
       - DATABASE_HOST=pg
       - DATABASE_USERNAME=postgres
+      - RAILS_ENV=development
+      - REDIS_URL=redis://redis:6379
+      - SSH_AUTH_SOCK=/ssh-agent
+    depends_on:
+      - pg
+      - redis
     ports:
       - 3000:3000
     links:
       - pg
       - redis
+    command: bundle exec puma
+    stdin_open: true
+    tty: true
+  worker:
+    build: .
+    volumes:
+      - .:/app
+      - app_assets:/app/public/assets/
+      - app_bundle:/app/vendor/bundle
+      - app_file_storage:/app/public/system/
+      - app_logs:/app/log/
+    environment:
+      - DATABASE_HOST=pg
+      - DATABASE_USERNAME=postgres
+      - RAILS_ENV=development
+      - REDIS_URL=redis://redis:6379
+    depends_on:
+      - pg
+      - redis
+    links:
+      - pg
+      - redis
+    command: bundle exec sidekiq
   pg:
     image: postgres
     volumes:
@@ -24,5 +58,9 @@ services:
     volumes:
       - redis-data:/data
 volumes:
+  app_assets: {}
+  app_bundle: {}
+  app_file_storage: {}
+  app_logs: {}
   pg-data: {}
   redis-data: {}

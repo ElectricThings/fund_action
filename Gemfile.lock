@@ -67,6 +67,10 @@ GIT
     decidim-comments (0.13.1)
       decidim-core (= 0.13.1)
       jquery-rails (~> 4.0)
+    decidim-consultations (0.13.1)
+      decidim-admin (= 0.13.1)
+      decidim-comments (= 0.13.1)
+      decidim-core (= 0.13.1)
     decidim-core (0.13.1)
       active_link_to (~> 1.0)
       autoprefixer-rails (~> 8.0)
@@ -158,6 +162,16 @@ GIT
       sassc (~> 1.11.0)
       sassc-rails (~> 1.3)
     decidim-verifications (0.13.1)
+      decidim-core (= 0.13.1)
+
+GIT
+  remote: https://github.com/alabs/decidim-module-calendar
+  revision: 02699a5f782de8f69bebd2f80b924399bfc23bda
+  branch: 0.13-stable
+  specs:
+    decidim-calendar (0.13.1)
+      decidim-admin (= 0.13.1)
+      decidim-consultations (= 0.13.1)
       decidim-core (= 0.13.1)
 
 GEM
@@ -315,6 +329,8 @@ GEM
       temple
     erubi (1.8.0)
     execjs (2.7.0)
+    faker (1.9.3)
+      i18n (>= 0.7)
     faraday (0.15.4)
       multipart-post (>= 1.2, < 3)
     ffi (1.9.25)
@@ -406,7 +422,7 @@ GEM
       i18n (>= 0.6.4, < 1.1)
     multi_json (1.13.1)
     multi_xml (0.6.0)
-    multipart-post (2.1.0)
+    multipart-post (2.1.1)
     net-scp (1.2.1)
       net-ssh (>= 2.6.5)
     net-ssh (5.0.2)
@@ -615,10 +631,13 @@ DEPENDENCIES
   daemons
   dalli
   decidim!
+  decidim-calendar!
+  decidim-consultations
   decidim-members!
   delayed_job_active_record
   doorkeeper (~> 4.4)
   ed25519 (>= 1.2, < 2.0)
+  faker
   language_list
   letter_opener_web (~> 1.3.0)
   listen (~> 3.1.0)

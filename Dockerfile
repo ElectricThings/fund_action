@@ -1,26 +1,28 @@
-FROM ruby:2.4.1
-MAINTAINER david.morcillo@codegram.com
+FROM ruby:2.5.1
 
-ARG rails_env=production
-ARG secret_key_base=
+ENV DEBIAN_FRONTEND noninteractive
+RUN apt-get update -qq && apt-get install -y \
+    build-essential \
+    libpq-dev \
+    nodejs \
+    libtool \
+    libsodium-dev \
+    imagemagick
 
-ENV APP_HOME /code
-ENV RAILS_ENV $rails_env
-ENV SECRET_KEY_BASE $secret_key_base
+RUN mkdir /app
+WORKDIR /app
 
-RUN apt-get update
+ENV BUNDLE_PATH=/app/vendor/bundle \
+    BUNDLE_BIN=/app/vendor/bundle/bin \
+    BUNDLE_JOBS=5 \
+    BUNDLE_RETRY=3 \
+    GEM_HOME=/bundle
 
-RUN curl -sL https://deb.nodesource.com/setup_5.x | bash && \
-    apt-get install -y nodejs
+ENV PATH="${BUNDLE_BIN}:${PATH}"
 
-ADD Gemfile /tmp/Gemfile
-ADD Gemfile.lock /tmp/Gemfile.lock
-RUN cd /tmp && bundle install
+ADD Gemfile /app/Gemfile
+ADD Gemfile.lock /app/Gemfile.lock
 
-RUN mkdir -p $APP_HOME
-WORKDIR $APP_HOME
-ADD . $APP_HOME
+RUN bundle install
 
-RUN bundle exec rake DATABASE_URL=postgresql://user:pass@127.0.0.1/dbname assets:precompile
-
-CMD ["bundle", "exec", "rails", "s", "-b0.0.0.0"]
+ADD . /app
