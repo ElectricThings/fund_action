@@ -22,7 +22,12 @@ en:
 
     authorization_handlers:
       anybody_authorization_handler:
-        name: Default
+        name: Anybody
+        explanation: ''
+        extra_explanation_restricted_emails: Only certain users are allowed to do this.
+        fields:
+          email: Email Address
+          allowed_emails: Allowed Email Addresses
 
     profiles:
       user_profile_bottom:

@@ -44,3 +44,11 @@ Decidim.menu :user_menu do |menu|
   menu.item t("invitations", scope: "layouts.decidim.user_profile"), main_app.user_invitations_path, position: 2, active: :inclusive
 end
 
+Decidim::Verifications.register_workflow(:anybody_authorization_handler) do |workflow|
+  workflow.form = "AnybodyAuthorizationHandler"
+  workflow.action_authorizer = "AnybodyAuthorizationHandler::ActionAuthorizer"
+  workflow.options do |options|
+    options.attribute :allowed_emails, type: :string, required: false
+  end
+end
+

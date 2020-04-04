@@ -52,4 +52,39 @@ class AnybodyAuthorizationHandler < Decidim::AuthorizationHandler
   # def metadata
   #   {}
   # end
+
+  # If you need custom authorization logic, you can implement your own action
+  # authorizer. In this case, it allows to set a list of valid postal codes for
+  # an authorization.
+  class ActionAuthorizer < Decidim::Verifications::DefaultActionAuthorizer
+    attr_reader :allowed_emails
+
+    # Overrides the parent class method, but it still uses it to keep the base behavior
+    def authorize
+      # Remove the additional setting from the options hash to avoid to be considered missing.
+      @allowed_emails ||= options.delete("allowed_emails").to_s.split(",").map(&:strip)
+
+      status_code, data = *super
+
+      if allowed_emails.present?
+        # Does not authorize users with different email addresses
+        if status_code == :ok && !allowed_emails.member?(authorization.user.email)
+          status_code = :unauthorized
+          data[:fields] = { "email" => authorization.user.email }
+        end
+
+        # Adds an extra message for inform the user the additional restriction for this authorization
+        data[:extra_explanation] = { key: "extra_explanation_restricted_emails",
+                                     params: { scope: "decidim.authorization_handlers.anybody_authorization_handler" }}
+      end
+
+      [status_code, data]
+    end
+
+    # Adds the list of allowed postal codes to the redirect URL, to allow forms to inform about it
+    #def redirect_params
+    #  { "postal_codes" => allowed_postal_codes&.join("-") }
+    #end
+  end
 end
+
