@@ -1,6 +1,6 @@
 source "https://rubygems.org"
 
-ruby '2.5.1'
+ruby '~> 2.5.1'
 gem "rails", "~> 5.2.1.1"
 
 #gem "decidim", path: '../decidim'
