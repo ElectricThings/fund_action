@@ -1,25 +1,6 @@
 GIT
-  remote: git://github.com/electricthings/decidim-members.git
-  revision: 478d81d01ff35f2d07220ed80ee762bafc88a459
-  specs:
-    decidim-members (0.3.0)
-      decidim-core (>= 0.13.0)
-      rails (~> 5.2.0)
-      sanitize (~> 4.5)
-
-GIT
-  remote: git://github.com/electricthings/decidim-module-calendar.git
-  revision: c8af5e7e14b22951df1f584a8f61d0574c8b02cf
-  branch: fundaction/0.13-stable
-  specs:
-    decidim-calendar (0.13.1)
-      decidim-admin (= 0.13.1)
-      decidim-consultations (= 0.13.1)
-      decidim-core (= 0.13.1)
-
-GIT
-  remote: git://github.com/electricthings/decidim.git
-  revision: 332242003f324b9730c7208f9c3f54f8344d9014
+  remote: git@github.com:electricthings/decidim
+  revision: 422f7fc266174ff2fca5f60084fa21786f7eaca6
   branch: fundaction/0.13-stable
   specs:
     decidim (0.13.1)
@@ -174,6 +155,25 @@ GIT
     decidim-verifications (0.13.1)
       decidim-core (= 0.13.1)
 
+GIT
+  remote: git@github.com:electricthings/decidim-members
+  revision: 478d81d01ff35f2d07220ed80ee762bafc88a459
+  specs:
+    decidim-members (0.3.0)
+      decidim-core (>= 0.13.0)
+      rails (~> 5.2.0)
+      sanitize (~> 4.5)
+
+GIT
+  remote: git@github.com:electricthings/decidim-module-calendar
+  revision: c8af5e7e14b22951df1f584a8f61d0574c8b02cf
+  branch: fundaction/0.13-stable
+  specs:
+    decidim-calendar (0.13.1)
+      decidim-admin (= 0.13.1)
+      decidim-consultations (= 0.13.1)
+      decidim-core (= 0.13.1)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -282,7 +282,7 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.12.2)
-    concurrent-ruby (1.1.5)
+    concurrent-ruby (1.1.6)
     countries (2.1.4)
       i18n_data (~> 0.8.0)
       money (~> 6.9)
@@ -593,7 +593,7 @@ GEM
     truncato (0.7.11)
       htmlentities (~> 4.3.1)
       nokogiri (>= 1.7.0, <= 2.0)
-    tzinfo (1.2.6)
+    tzinfo (1.2.7)
       thread_safe (~> 0.1)
     uber (0.1.0)
     uglifier (4.2.0)

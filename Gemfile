@@ -5,10 +5,10 @@ gem "rails", "~> 5.2.1.1"
 
 #gem "decidim", path: '../decidim'
 #gem "decidim-members", path: '../decidim-members'
-gem "decidim", github: 'electricthings/decidim', branch: 'fundaction/0.13-stable'
-gem "decidim-calendar", github: "electricthings/decidim-module-calendar", branch: "fundaction/0.13-stable"
+gem "decidim", git: 'git@github.com:electricthings/decidim', branch: 'fundaction/0.13-stable'
+gem "decidim-calendar", git: "git@github.com:electricthings/decidim-module-calendar", branch: "fundaction/0.13-stable"
 gem "decidim-consultations"
-gem 'decidim-members', github: 'electricthings/decidim-members'
+gem 'decidim-members', git: 'git@github.com:electricthings/decidim-members'
 
 gem 'uglifier', '>= 1.3.0'
 
