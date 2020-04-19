@@ -19,6 +19,8 @@ gem 'language_list'
 gem 'therubyracer'
 gem 'doorkeeper', '~> 4.4'
 
+gem 'sprockets', '< 4.0'
+
 gem 'rack', '>= 2.0.8'
 
 gem 'nokogiri', ">= 1.10.8"
