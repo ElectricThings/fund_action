@@ -24,7 +24,7 @@ en:
       anybody_authorization_handler:
         name: Anybody
         explanation: ''
-        extra_explanation_restricted_emails: Only certain users are allowed to do this.
+        extra_explanation_restricted_emails: "Sorry! This action is restricted to authorised users only."
         fields:
           email: Email Address
           allowed_emails: Allowed Email Addresses
