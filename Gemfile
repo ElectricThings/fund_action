@@ -36,7 +36,7 @@ end
 
 group :development do
   gem 'faker'
-  gem 'puma', '>= 3.12.2'
+  gem 'puma', '>= 4.3.5'
   gem 'web-console'
   gem 'listen', '~> 3.1.0'
   gem 'letter_opener_web', '~> 1.3.0'
