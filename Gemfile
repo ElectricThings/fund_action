@@ -25,6 +25,8 @@ gem 'rack', '>= 2.0.8'
 
 gem 'nokogiri', ">= 1.10.8"
 
+gem 'kaminari', '~> 1.2.1'
+
 group :development, :test do
   gem 'byebug', platform: :mri
   #gem "decidim-dev", path: '../decidim'
