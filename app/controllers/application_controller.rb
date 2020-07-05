@@ -22,6 +22,7 @@ class ApplicationController < ActionController::Base
       decidim/cookie_policy
       decidim/errors
       decidim/pages
+      decidim/homepage
     ).include? params[:controller]
 
       return true
