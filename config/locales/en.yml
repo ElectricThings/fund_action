@@ -77,6 +77,8 @@ en:
 
   layouts:
     decidim:
+      user_menu:
+        invite_friends: Invite friends
       user_profile:
         invitations: Invitations
 
