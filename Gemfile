@@ -1,14 +1,15 @@
 source "https://rubygems.org"
 
-ruby '~> 2.5.1'
-gem "rails", "~> 5.2.1.1"
+ruby '~> 2.6.1'
+gem "rails", ">= 5.2.4.3", "< 6.0"
 
-#gem "decidim", path: '../decidim'
-#gem "decidim-members", path: '../decidim-members'
-gem "decidim", git: 'git@github.com:electricthings/decidim', branch: 'fundaction/0.13-stable'
-gem "decidim-calendar", git: "git@github.com:electricthings/decidim-module-calendar", branch: "fundaction/0.13-stable"
+gem "decidim", path: '../decidim'
+#gem "decidim", git: 'git@github.com:electricthings/decidim', branch: 'fundaction/0.22-stable'
+gem "decidim-calendar", git: "git@github.com:electricthings/decidim-module-calendar", branch: "master"
 gem "decidim-consultations"
-gem 'decidim-members', git: 'git@github.com:electricthings/decidim-members'
+
+#gem "decidim-members", path: '../decidim-members'
+#gem 'decidim-members', git: 'git@github.com:electricthings/decidim-members'
 
 gem 'uglifier', '>= 1.3.0'
 
@@ -17,7 +18,6 @@ gem 'rack-attack'
 gem 'country_select', "~> 3.1", require: 'country_select_without_sort_alphabetical'
 gem 'language_list'
 gem 'therubyracer'
-gem 'doorkeeper', '~> 4.4'
 
 gem 'sprockets', '< 4.0'
 
