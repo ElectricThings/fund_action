@@ -52,3 +52,14 @@ Decidim::Verifications.register_workflow(:anybody_authorization_handler) do |wor
   end
 end
 
+Decidim.view_hooks.register(:user_profile_bottom,
+                            priority: Decidim::ViewHooks::HIGH_PRIORITY) do |view_context|
+  user = view_context.send :profile_user
+  # Since this is rendered inside a cell we need to access the parent context in order to render it.
+  view_context = view_context.controller.view_context
+
+  view_context.render(
+    partial: "fund_action/hooks/user_profile_bottom",
+    locals: { user: user }
+  )
+end
