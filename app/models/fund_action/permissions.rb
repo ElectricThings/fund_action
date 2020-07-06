@@ -2,17 +2,18 @@ module FundAction
   class Permissions < Decidim::DefaultPermissions
 
     def permissions
+      return permission_action unless permission_action.scope == :public
+      return permission_action unless user
 
-      unless user and user.is_a?(Decidim::User)
-        permission_action.disallow!
-        return permission_action
-      end
+      invitation_action?
 
-      unless permission_action.scope == :global and
-             permission_action.subject == :invitations
+      permission_action
+    end
 
-        return permission_action
-      end
+    private
+
+    def invitation_action?
+      return unless permission_action.subject == :invitations
 
       case permission_action.action
       when :destroy, :resend
@@ -20,14 +21,11 @@ module FundAction
              u.invited_to_sign_up? and
              u.invited_by == user and
              !u.invitation_accepted?
-          permission_action.allow!
+          allow!
         end
       when :create
-        permission_action.allow!
+        allow!
       end
-
-
-      return permission_action
     end
 
     def invitation_user
