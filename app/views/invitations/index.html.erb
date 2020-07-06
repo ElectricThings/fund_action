@@ -32,11 +32,9 @@
             <% end %>
           </td>
           <td class="table-list__actions">
-            <% if allowed_to?(:create, :invitations) && user.invited_to_sign_up? %>
+            <% if user.invited_to_sign_up? && !user.invitation_accepted? %>
               <%= icon_link_to "reload", resend_user_invitation_path(user), t("actions.resend_invitation", scope: "decidim.admin"), class: "resend-invitation", method: :patch %>
-            <% end %>
 
-            <% if allowed_to? :destroy, :invitations, user: user %>
               <%= icon_link_to "circle-x", user_invitation_path(user), t("actions.destroy", scope: "decidim.admin"), class: "action-icon--remove", method: :delete, data: { confirm: t(".confirm_destroy") } %>
             <% end %>
           </td>

@@ -6,23 +6,21 @@ class InvitationsController < Decidim::ApplicationController
   helper 'decidim/admin/icon_link'
 
   before_action :check_remaining_invites, only: %i(new create)
+  before_action :check_invitation_update, only: %i(resend destroy)
 
 
   def index
-    enforce_permission_to :create, :invitations
     @users = current_organization.users.
       where(invited_by: current_user).page(params[:page]).per(20).
       order(created_at: :asc)
   end
 
   def new
-    enforce_permission_to :create, :invitations
     @form = form(FundAction::InviteUserForm).instance
     @form.num_invites = 5
   end
 
   def create
-    enforce_permission_to :create, :invitations
     @form = form(FundAction::InviteUserForm).from_params params
 
     FundAction::InviteUsers.(@form, current_user) do
@@ -46,10 +44,7 @@ class InvitationsController < Decidim::ApplicationController
 
   # resend invitation
   def resend
-    user = find_user
-    enforce_permission_to :resend, :invitations, user: user
-
-    Decidim::InviteUserAgain.(user, "invited_by_user") do
+    Decidim::InviteUserAgain.(@invited_user, "invited_by_user") do
       on(:ok) do
         flash[:notice] = I18n.t("users.resend_invitation.success", scope: "decidim.admin")
       end
@@ -65,10 +60,7 @@ class InvitationsController < Decidim::ApplicationController
 
   # revoke invitation
   def destroy
-    user = find_user
-    enforce_permission_to :destroy, :invitations, user: user
-
-    FundAction::RemoveInvitation.(user) do
+    FundAction::RemoveInvitation.(@invited_user) do
       on(:ok) do
         flash[:notice] = I18n.t("destroy.success", scope: "invitations")
       end
@@ -84,10 +76,6 @@ class InvitationsController < Decidim::ApplicationController
 
   private
 
-  def find_user
-    current_organization.users.find params[:id]
-  end
-
   def check_remaining_invites
     unless current_user.has_invitations_left?
       redirect_to user_invitations_path
@@ -95,14 +83,18 @@ class InvitationsController < Decidim::ApplicationController
     end
   end
 
-  def permission_class_chain
-    super.tap do |chain|
-      chain << FundAction::Permissions
-    end
-  end
+  def check_invitation_update
+    @invited_user = current_organization.users.find params[:id]
 
-  def permission_scope
-    :global
+    if @invited_user&.invited_to_sign_up? and
+      @invited_user.invited_by == current_user and
+      !@invited_user.invitation_accepted?
+
+      true
+    else
+      redirect_to user_invitations_path
+      false
+    end
   end
 
 end
