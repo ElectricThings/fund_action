@@ -1,14 +1,7 @@
 GIT
-  remote: git@github.com:electricthings/decidim-module-calendar
-  revision: efbb11b9de4b3764122360b44e5f8ea32f1d7946
-  branch: master
-  specs:
-    decidim-calendar (0.19.0)
-      decidim-admin (>= 0.19.0)
-      decidim-core (>= 0.19.0)
-
-PATH
-  remote: ../decidim
+  remote: git@github.com:electricthings/decidim
+  revision: 0eeebe6b1c13ca88578970356047636bbb8332b7
+  branch: fundaction/0.22-stable
   specs:
     decidim (0.22.0.rc1)
       decidim-accountability (= 0.22.0.rc1)
@@ -182,6 +175,24 @@ PATH
       sassc-rails (~> 2.1.2)
     decidim-verifications (0.22.0.rc1)
       decidim-core (= 0.22.0.rc1)
+
+GIT
+  remote: git@github.com:electricthings/decidim-members
+  revision: 478d81d01ff35f2d07220ed80ee762bafc88a459
+  specs:
+    decidim-members (0.3.0)
+      decidim-core (>= 0.13.0)
+      rails (~> 5.2.0)
+      sanitize (~> 4.5)
+
+GIT
+  remote: git@github.com:electricthings/decidim-module-calendar
+  revision: efbb11b9de4b3764122360b44e5f8ea32f1d7946
+  branch: master
+  specs:
+    decidim-calendar (0.19.0)
+      decidim-admin (>= 0.19.0)
+      decidim-core (>= 0.19.0)
 
 GEM
   remote: https://rubygems.org/
@@ -458,6 +469,8 @@ GEM
     nobspw (0.6.2)
     nokogiri (1.10.9)
       mini_portile2 (~> 2.4.0)
+    nokogumbo (1.5.0)
+      nokogiri
     oauth (0.5.4)
     oauth2 (1.4.4)
       faraday (>= 0.8, < 2.0)
@@ -575,6 +588,10 @@ GEM
     ruby-ole (1.2.12.2)
     ruby_dep (1.5.0)
     rubyzip (2.0.0)
+    sanitize (4.6.6)
+      crass (~> 1.0.2)
+      nokogiri (>= 1.4.4)
+      nokogumbo (~> 1.4)
     sass (3.4.25)
     sassc (2.3.0)
       ffi (~> 1.9)
@@ -665,6 +682,7 @@ DEPENDENCIES
   decidim!
   decidim-calendar!
   decidim-consultations
+  decidim-members!
   delayed_job_active_record
   ed25519 (>= 1.2, < 2.0)
   faker
