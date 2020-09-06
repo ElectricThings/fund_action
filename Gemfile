@@ -58,6 +58,7 @@ group :production do
   gem 'puma_worker_killer'
   gem 'connection_pool'
   gem 'delayed_job_active_record'
+  gem 'daemons'
   gem 'dalli'
   gem 'airbrake', "~> 7.3"
 end
