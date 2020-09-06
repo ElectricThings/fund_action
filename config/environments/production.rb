@@ -68,9 +68,10 @@ Rails.application.configure do
   # deployments.
   revision = File.read(Rails.root/"REVISION").chomp rescue "63b178c"
 
-  config.cache_store = :mem_cache_store,
-    '127.0.0.1:11211',
-    {namespace: "fund-action:#{revision}:default"}
+  memcached_servers = ENV.fetch('MEMCACHED_SERVERS'){ "10.0.1.5:11211" }.split
+  concurrency       = ENV.fetch('NUM_THREADS'){ 5 }
+  cache_partition   = ENV.fetch('CACHE_PARTITION'){ "fundaction" }
+  config.cache_store = :mem_cache_store, *memcached_servers, { namespace: "#{cache_partition}:#{revision}:default", pool_size: concurrency }
 
 
   # Use a real queuing backend for Active Job (and separate queues per environment)

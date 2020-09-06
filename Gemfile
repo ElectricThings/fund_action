@@ -34,9 +34,10 @@ group :development, :test do
   #gem 'faker', '~> 1.8.4'
 end
 
+gem 'puma', '>= 4.3.5'
+
 group :development do
   gem 'faker'
-  gem 'puma', '>= 4.3.5'
   gem 'web-console'
   gem 'listen', '~> 3.1.0'
   gem 'letter_opener_web', '~> 1.3.0'
@@ -44,6 +45,7 @@ group :development do
   gem 'capistrano', '~> 3.10.0'
   gem 'capistrano-rails', require: false
   gem 'capistrano-chruby', require: false
+  gem 'capistrano-cloud-stuff', require: false, git: 'git@code.jkraemer.net:jk/capistrano-cloud-stuff'
 
   gem 'rbnacl', '< 5.0', '>= 3.2.0'
   gem 'rbnacl-libsodium'
@@ -52,9 +54,10 @@ group :development do
 end
 
 group :production do
-  gem 'daemons'
+  gem 'puma-plugin-systemd'
+  gem 'puma_worker_killer'
+  gem 'connection_pool'
   gem 'delayed_job_active_record'
-  gem 'unicorn'
   gem 'dalli'
   gem 'airbrake', "~> 7.3"
 end
