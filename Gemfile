@@ -25,7 +25,13 @@ gem 'rack', '>= 2.0.8'
 
 gem 'nokogiri', ">= 1.10.8"
 
+# GHSA-p4x4-rw2p-8j8m
+gem "sanitize", ">= 5.2.1"
+
 gem 'kaminari', '~> 1.2.1'
+
+# GHSA-g6wq-qcwm-j5g2
+gem "websocket-extensions", ">= 0.1.5"
 
 group :development, :test do
   gem 'byebug', platform: :mri
