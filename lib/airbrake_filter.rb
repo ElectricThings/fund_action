@@ -1,7 +1,9 @@
+# frozen_string_literal: true
+
 class AirbrakeFilter
 
   IGNORED_DJ_EXCEPTIONS = [
-    'Delayed::WorkerTimeout'
+    'Delayed::WorkerTimeout',
   ]
 
   def call(notice)
@@ -33,6 +35,10 @@ class AirbrakeFilter
     # Some errors are handled by Rails itself in a later stage than the
     # Airbrake middleware, e.g. through proper status codes.
     return true if ActionDispatch::ExceptionWrapper.rescue_responses[error[:type]] != :internal_server_error
+
+    # Ignore SIGTERM errors - these are thrown by Puma on shutdown. Purpose is
+    # to tell other code to do their cleanup work.
+    return true if error[:type] == 'SignalException' && error[:message] == 'SIGTERM'
   end
 
 end
