@@ -1,3 +1,5 @@
+require 'syslog/logger'
+
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
@@ -47,12 +49,15 @@ Rails.application.configure do
   # Force all access to the app over SSL, use Strict-Transport-Security, and use secure cookies.
   # config.force_ssl = true
 
+  instance_name = ENV.fetch('INSTANCE_NAME'){ "fundaction" }
+
   # Logging
   #
 
   # Use the lowest log level to ensure availability of diagnostic information
   # when problems arise.
   config.log_level = :debug
+  config.logger = Syslog::Logger.new("rails_#{instance_name}", Syslog::LOG_LOCAL6)
 
   # Prepend all log lines with the following tags.
   config.log_tags = [ :request_id ]
@@ -70,8 +75,7 @@ Rails.application.configure do
 
   memcached_servers = ENV.fetch('MEMCACHED_SERVERS'){ "10.0.1.5:11211" }.split
   concurrency       = ENV.fetch('NUM_THREADS'){ 5 }
-  cache_partition   = ENV.fetch('CACHE_PARTITION'){ "fundaction" }
-  config.cache_store = :mem_cache_store, *memcached_servers, { namespace: "#{cache_partition}:#{revision}:default", pool_size: concurrency }
+  config.cache_store = :mem_cache_store, *memcached_servers, { namespace: "#{instance_name}:#{revision}:default", pool_size: concurrency }
 
 
   # Use a real queuing backend for Active Job (and separate queues per environment)
