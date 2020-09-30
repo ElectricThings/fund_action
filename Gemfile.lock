@@ -7,7 +7,7 @@ GIT
 
 GIT
   remote: https://github.com/electricthings/decidim
-  revision: d0c057ff25482cf951c38fb24701edba2bbbd5e2
+  revision: 0763ee69512249f9058c0371f332b7f8834887ce
   branch: fundaction/0.22-stable
   specs:
     decidim (0.22.0)
@@ -185,7 +185,7 @@ GIT
 
 GIT
   remote: https://github.com/electricthings/decidim-members
-  revision: d381bb9c18bad72d2b68f943286e7e917757b57c
+  revision: 4c4fc1d2d44941a6276b5a22b0e7de3c24ba5c48
   specs:
     decidim-members (0.3.0)
       decidim-core (>= 0.13.0)
@@ -396,7 +396,7 @@ GEM
     graphiql-rails (1.4.11)
       railties
       sprockets-rails
-    graphql (1.11.4)
+    graphql (1.11.5)
     hashdiff (1.0.1)
     hashie (4.1.0)
     htmlentities (4.3.4)
