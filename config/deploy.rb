@@ -11,7 +11,7 @@ set :bundle_binstubs, -> { shared_path.join("bin") }
 
 set :pty, true
 
-append :linked_files, "config/database.yml", "config/secrets.yml", "config/puma.rb"
+append :linked_files, "config/database.yml", "config/secrets.yml", "config/puma.rb", "config/smtp_settings.yml"
 append :linked_dirs, "log", "tmp", ".bundle"
 append :linked_links, 'public/uploads', 'files'
 
