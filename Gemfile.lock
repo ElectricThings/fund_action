@@ -7,7 +7,7 @@ GIT
 
 GIT
   remote: https://github.com/electricthings/decidim
-  revision: 0763ee69512249f9058c0371f332b7f8834887ce
+  revision: d0c057ff25482cf951c38fb24701edba2bbbd5e2
   branch: fundaction/0.22-stable
   specs:
     decidim (0.22.0)
@@ -328,7 +328,7 @@ GEM
     css_parser (1.7.1)
       addressable
     daemons (1.3.1)
-    dalli (2.7.10)
+    dalli (2.7.11)
     date_validator (0.9.0)
       activemodel
       activesupport
