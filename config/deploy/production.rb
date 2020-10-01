@@ -1,5 +1,5 @@
 set :deploy_to, "/srv/webapps/#{fetch :application}"
-set :branch, 'feature/upgrade-0.22'
+set :branch, 'master'
 
 server 'app01.jkraemer.net', user: 'deploy', roles: %w{web app}
 server 'app03.jkraemer.net', user: 'deploy', roles: %w{web app db}
