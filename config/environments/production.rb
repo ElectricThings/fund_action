@@ -99,6 +99,7 @@ Rails.application.configure do
 
   config.action_mailer.default_url_options ||= {}
   config.action_mailer.default_url_options[:protocol] = 'https'
+  config.action_mailer.default_url_options[:host] = 'assembly.fundaction.eu'
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
