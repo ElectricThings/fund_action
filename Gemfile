@@ -4,7 +4,7 @@ ruby '~> 2.6.6'
 gem "rails", ">= 5.2.4.3", "< 6.0"
 
 #gem "decidim", path: '../decidim'
-gem "decidim", git: 'https://github.com/electricthings/decidim', branch: 'fundaction/0.22-stable'
+gem "decidim", git: 'https://github.com/electricthings/decidim', branch: 'fundaction/0.23-stable'
 gem "decidim-calendar", git: "https://github.com/electricthings/decidim-module-calendar", branch: "master"
 gem "decidim-consultations"
 
