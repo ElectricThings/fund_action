@@ -7,7 +7,7 @@ GIT
 
 GIT
   remote: https://github.com/electricthings/decidim
-  revision: 7e7f45f301b25adf7980d2e880735f63f019778d
+  revision: 6b34aed7508309435ce79d3bf36510704a0b6d24
   branch: fundaction/0.23-stable
   specs:
     decidim (0.23.0.dev)
@@ -468,7 +468,7 @@ GEM
     method_source (1.0.0)
     mime-types (3.3.1)
       mime-types-data (~> 3.2015)
-    mime-types-data (3.2020.0512)
+    mime-types-data (3.2020.1104)
     mimemagic (0.3.5)
     mini_magick (4.10.1)
     mini_mime (1.0.2)
