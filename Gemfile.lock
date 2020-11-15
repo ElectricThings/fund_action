@@ -193,7 +193,7 @@ GIT
 
 GIT
   remote: https://github.com/electricthings/decidim-members
-  revision: 4c4fc1d2d44941a6276b5a22b0e7de3c24ba5c48
+  revision: 12f435aa7ff8924326a186b379ab8fc8b76d3082
   specs:
     decidim-members (0.3.0)
       decidim-core (>= 0.13.0)
@@ -374,7 +374,7 @@ GEM
     equalizer (0.0.11)
     erbse (0.1.4)
       temple
-    erubi (1.9.0)
+    erubi (1.10.0)
     etherpad-lite (0.3.0)
       rest-client (>= 1.6)
     execjs (2.7.0)
