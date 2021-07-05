@@ -23,7 +23,7 @@ gem 'sprockets', '< 4.0'
 
 gem 'rack', '>= 2.0.8'
 
-gem 'nokogiri', ">= 1.10.8"
+gem 'nokogiri', ">= 1.11.4"
 
 # GHSA-p4x4-rw2p-8j8m
 gem "sanitize", ">= 5.2.1"
@@ -40,7 +40,7 @@ group :development, :test do
   #gem 'faker', '~> 1.8.4'
 end
 
-gem 'puma', '>= 4.3.5'
+gem 'puma', '>= 4.3.8'
 
 group :development do
   gem 'faker'
