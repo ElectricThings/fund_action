@@ -7,8 +7,8 @@ GIT
 
 GIT
   remote: https://github.com/electricthings/decidim
-  revision: d540425be6a40e28e9f3cd00a47fcd859438c2af
-  branch: d540425
+  revision: 6aa05e38f3e1f1150a53cc069b074e973f2cf615
+  branch: 6aa05e38f
   specs:
     decidim (0.23.5)
       decidim-accountability (= 0.23.5)
