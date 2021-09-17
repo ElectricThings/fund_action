@@ -39,7 +39,7 @@ class AnybodyAuthorizationHandler < Decidim::AuthorizationHandler
   # Note that if you set some validations and overwrite this method, then the
   # validations will not run, so it's easier to just remove this method and reite
   # your logic using ActiveModel validations.
-  def valid?
+  def valid?(*_)
     true
   end
 
