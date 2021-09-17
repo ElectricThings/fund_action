@@ -42,6 +42,10 @@ end
 
 gem 'puma', '>= 4.3.8'
 
+
+#  CVE-2021-32740
+gem "addressable", ">= 2.8.0"
+
 group :development do
   gem 'faker'
   gem 'web-console'
