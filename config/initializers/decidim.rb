@@ -63,3 +63,21 @@ Decidim.view_hooks.register(:user_profile_bottom,
     locals: { user: user }
   )
 end
+
+# create authorization record after confirmation
+module AutoAuthorizer
+  def after_confirmation
+    unless Decidim::Authorization.where(decidim_user_id: u.id).any?
+      Decidim::Authorization.create(
+        name: "anybody_authorization_handler",
+        decidim_user_id: id,
+        granted_at: Time.now,
+        metadata: {}
+      )
+    end
+
+    super
+  end
+end
+Decidim::User.prepend AutoAuthorizer
+
