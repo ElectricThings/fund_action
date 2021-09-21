@@ -17,7 +17,7 @@ class InvitationsController < Decidim::ApplicationController
 
   def new
     @form = form(FundAction::InviteUserForm).instance
-    @form.num_invites = 5
+    @form.num_invites = 0 # default to 0 invites
   end
 
   def create
