@@ -40,7 +40,7 @@ group :development, :test do
   #gem 'faker', '~> 1.8.4'
 end
 
-gem 'puma', '>= 4.3.8'
+gem 'puma', '~> 4.3', '>= 4.3.8'
 
 
 #  CVE-2021-32740
