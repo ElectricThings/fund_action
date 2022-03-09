@@ -1,7 +1,7 @@
 source "https://rubygems.org"
 
 ruby '~> 2.6.6'
-gem "rails", ">= 5.2.4.3", "< 6.0"
+gem "rails", ">= 5.2.6.3", "< 6.0"
 
 #gem "decidim", path: '../decidim'
 gem "decidim", git: 'https://github.com/electricthings/decidim', branch: '6ae5ce8a8'
